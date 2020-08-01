@@ -1,0 +1,43 @@
+﻿@model IEnumerable<AdressBook.Models.Phone>
+
+    <br />
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneStatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneStatus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PhoneId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PhoneId }, new { onclick = "return confirm('Are sure wants to delete?');" })
+        </td>
+    </tr>
+}
+
+</table>
