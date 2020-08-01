@@ -1,0 +1,143 @@
+use AddressBook;
+go
+
+--create table Person
+--(
+--	PersonId int primary key identity(1,1),
+--	FirstName varchar(64) not null,
+--	SurName varchar(64) not null,
+--	[Address] varchar(64) not null,
+--	PersonAge int not null
+--)
+
+--create table Phone
+--(
+--	PhoneId int primary key identity(1,1),
+--	PersonId int foreign key references dbo.Person(PersonId),
+--	PhoneNumber varchar(64) not null,
+--	PhoneStatus varchar(64) not null
+--)
+
+
+
+   --Get All Info
+  --create procedure GetAllInfo
+  --as
+  --begin
+  --select Person.PersonId,Phone.PhoneId,FirstName,SurName,[Address],PersonAge,PhoneNumber,PhoneStatus from Phone,Person
+  --where Phone.PersonId = Person.PersonId
+  --end
+
+    --Add PhoneBook Record
+	--create procedure AddPhoneBookRecord
+	--(
+	--   @PersonId int,
+	--   @FirstName nvarchar (50),  
+ --      @SurName nvarchar (50),  
+ --      @Address nvarchar (100),
+	--   @PersonAge int,
+	--   @PhoneNumber varchar(64),
+ --      @PhoneStatus varchar(64)
+	--)
+	--as
+	--begin
+	--Insert into Person values(@FirstName,@SurName,@Address,@PersonAge);
+	--Insert into Phone values(@PersonId,@PhoneNumber,@PhoneStatus)
+	--end
+
+--Insert Person
+    --Create procedure [dbo].[AddNewPerson]  
+    --(  
+    --   @FirstName nvarchar (50),  
+    --   @SurName nvarchar (50),  
+    --   @Address nvarchar (100),
+	   --@PersonAge int
+    --)  
+    --as  
+    --begin  
+    --   Insert into Person values(@FirstName,@SurName,@Address,@PersonAge)  
+    --End
+
+
+    --View All Persons
+    --Create Procedure [dbo].[GetPersonDetails]  
+    --as  
+    --begin  
+    --   select * from Person
+    --End
+
+	--Update Person
+	--Create procedure [dbo].[UpdatePersonDetails]  
+ --   (  
+ --      @PersonId int,  
+ --      @FirstName varchar (50),  
+ --      @SurName varchar (50),  
+ --      @Address varchar (150),
+	--   @PersonAge varchar(50)
+ --   )  
+ --   as  
+ --   begin  
+ --      Update Person   
+ --      set FirstName = @FirstName,  
+ --      SurName = @SurName,  
+ --      [Address] = @Address,
+	--   PersonAge = @PersonAge
+ --      where PersonId=@PersonId  
+ --   End
+
+     --Delete Person
+    --Create procedure [dbo].[DeletePerson]  
+    --(  
+    --   @PersonId int  
+    --)  
+    --as   
+    --begin  
+	   --Delete from Phone where PersonId = @PersonId
+    --   Delete from Person where PersonId = @PersonId  
+    --End
+
+	--Add Phone
+	--Create procedure AddPhone
+	--(
+	--  @PersonId int,
+	--  @PhoneNumber varchar(64),
+ --     @PhoneStatus varchar(64)
+	--)
+	--as
+	--begin 
+	--Insert into Phone values(@PersonId,@PhoneNumber,@PhoneStatus)
+	--End
+
+	--Delete Phone
+	 --Create procedure [dbo].[DeletePhone]  
+  --  (  
+  --     @PhoneId int  
+  --  )  
+  --  as   
+  --  begin  
+  --     Delete from Phone where PhoneId = @PhoneId  
+  --  End
+
+  --GetPhoneDetails
+  --Create Procedure GetPhoneDetails 
+  --  as  
+  --  begin  
+  --     select * from Phone
+  --  End
+
+  --Update Phone
+  --  Create procedure UpdatePhoneDetails 
+  --  (  
+	 --   @PhoneId int,
+		--@PersonId int,
+		--@PhoneNumber varchar(64),
+		--@PhoneStatus varchar(64) 
+  --  )  
+  --  as  
+  --  begin  
+  --     Update Phone   
+  --     set PersonId = @PersonId,  
+  --     PhoneNumber = @PhoneNumber,
+	 --  PhoneStatus = @PhoneStatus
+  --     where PhoneId = @PhoneId  
+  --  End
